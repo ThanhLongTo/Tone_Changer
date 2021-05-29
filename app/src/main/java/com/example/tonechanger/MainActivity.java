@@ -759,7 +759,5 @@ public class MainActivity extends AppCompatActivity {
             spannableString.setSpan(bold_italic, openBracketCount.get(i), closeBracketCount.get(i)+1, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         }
         return spannableString;
-
     }
 }
-
