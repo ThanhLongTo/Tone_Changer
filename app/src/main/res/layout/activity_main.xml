@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorDark"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/mainView"
+        android:layout_margin="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/firstTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/quicksand_bold"
+            android:text="Tone Changer"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_marginTop="30dp"
+            android:id="@+id/card1"
+            android:layout_below="@id/firstTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorGrey"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                android:id="@+id/textCard1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Original Lyric"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDownCard1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_arrow_drop_down_24"
+                android:layout_margin="8dp"/>
+
+
+
+            <RelativeLayout
+                android:id="@+id/expandableCard1"
+                android:layout_marginTop="60dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <EditText
+                    android:id="@+id/mainLyric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_centerHorizontal="true"
+                    android:hint="Paste a lyric here"
+                    android:textColorHint="@color/colorWhite"
+                    android:textColor="@color/colorWhite"/>
+
+                <Button
+                    android:layout_below="@id/mainLyric"
+                    android:id="@+id/btnDone"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:text="Done"
+                    android:textColor="@color/colorWhite"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/rounded_stroke_bg"
+                    />
+
+
+            </RelativeLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card2"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorGrey"
+            app:cardCornerRadius="20dp">
+
+
+            <TextView
+                android:id="@+id/textCard2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Edited Lyric"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDownCard2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_arrow_drop_down_24"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/switchChord"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_compare_arrows_24"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/checkedLyricCard2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_check_24"
+                android:layout_marginRight="90dp"
+                android:layout_marginTop="12dp"/>
+
+            <Button
+                android:id="@+id/btnCopyCard2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_file_copy_24"
+                android:layout_marginRight="120dp"
+                android:layout_marginTop="12dp"/>
+
+
+
+            <RelativeLayout
+                    android:layout_marginTop="50dp"
+                    android:layout_gravity="center_horizontal"
+                    android:id="@+id/expandableCard2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone">
+
+                <RelativeLayout
+                        android:id="@+id/changeBtn"
+                        android:layout_marginBottom="20dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <Button
+                            android:id="@+id/btnUp"
+                            android:layout_width="80dp"
+                            android:layout_height="50dp"
+                            android:text="Up"
+                            android:textColor="@color/colorWhite"
+                            android:layout_marginTop="20dp"
+                            android:background="@drawable/rounded_stroke_bg"
+                            />
+
+                    <Button
+                            android:id="@+id/btnClear"
+                            android:layout_width="80dp"
+                            android:layout_height="50dp"
+                            android:text="clear"
+                            android:textColor="@color/colorWhite"
+                            android:layout_marginTop="20dp"
+                            android:layout_toRightOf="@id/btnUp"
+                            android:layout_marginLeft="20dp"
+                        android:background="@drawable/rounded_stroke_bg"
+                            />
+
+                    <Button
+                            android:id="@+id/btnDown"
+                            android:layout_width="80dp"
+                            android:layout_height="50dp"
+                            android:text="Down"
+                            android:textColor="@color/colorWhite"
+                            android:layout_marginTop="20dp"
+                            android:layout_toRightOf="@id/btnClear"
+                            android:layout_marginLeft="20dp"
+                        android:background="@drawable/rounded_stroke_bg"
+                            />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_toRightOf="@id/changeBtn"
+                        android:layout_marginLeft="250dp">
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hello"
+                            android:textSize="30sp"
+                            android:textColor="@color/colorWhite"/>
+
+                </LinearLayout>
+
+
+                <RelativeLayout
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@id/changeBtn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp">
+
+                    <TextView
+                            android:id="@+id/mainTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="30dp"
+                            android:fontFamily="@font/acme"
+                            android:text="Edited"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="40sp" />
+
+                    <TextView
+                            android:id="@+id/mainText"
+                            android:layout_below="@id/mainTitle"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginBottom="40dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/colorSemiWhite"
+                            android:text="Your lyric will appear here"
+                            android:textSize="15sp"/>
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card3"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/card2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorGrey"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                android:id="@+id/textCard3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Find lyric"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDownCard3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_arrow_drop_down_24"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/btnCopyCard3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_file_copy_24"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="12dp"/>
+
+            <Button
+                android:id="@+id/checkedLyricCard3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_check_24"
+                android:layout_marginRight="90dp"
+                android:layout_marginTop="12dp"/>
+
+            <RelativeLayout
+                android:layout_marginTop="50dp"
+                android:id="@+id/expandableCard3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+
+                <RelativeLayout
+                    android:id="@+id/searchBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp">
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:id="@+id/findName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Name :"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20sp"/>
+
+                    <EditText
+                        android:layout_toRightOf="@id/findName"
+                        android:id="@+id/findChordByName"
+                        android:layout_margin="10dp"
+                        android:layout_width="130dp"
+                        android:layout_height="40dp"
+                        android:hint="search..."
+                        android:padding="10dp"
+                        android:textColorHint="@color/colorSemiBlack"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="15sp"
+                        />
+
+                    <Button
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/findChordByName"
+                        android:id="@+id/btnFindChordByName"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_baseline_search_24"
+                        />
+
+
+                    <TextView
+                        android:layout_below="@id/findChordByName"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/findChordByURL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        android:autoLink="web"
+                        android:text=""
+                        android:clickable="true"
+                        android:textColorLink="@color/colorBlue"
+                        android:textSize="10sp"/>
+
+
+
+                </RelativeLayout>
+
+
+
+
+
+                <RelativeLayout
+                    android:layout_below="@id/searchBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <TextView
+                        android:id="@+id/scrapedLyric"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your lyric will appear here"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorSemiWhite"
+                        android:padding="5dp"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card4"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/card3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorGrey"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                android:id="@+id/textCard4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Parse URL"
+                android:textColor="@color/colorWhite"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDownCard4"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_arrow_drop_down_24"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/btnCopyCard4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_file_copy_24"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="12dp"/>
+
+            <Button
+                android:id="@+id/checkedLyricCard4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_check_24"
+                android:layout_marginRight="90dp"
+                android:layout_marginTop="12dp"/>
+
+            <RelativeLayout
+                android:layout_marginTop="50dp"
+                android:id="@+id/expandableCard4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+
+                <RelativeLayout
+                    android:id="@+id/searchBoxURL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp">
+
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:id="@+id/findNameURL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Link (URL) :"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="15sp"/>
+
+                    <EditText
+                        android:layout_below="@id/findNameURL"
+                        android:id="@+id/findChordByNameURL"
+                        android:layout_margin="10dp"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:hint="search..."
+                        android:padding="10dp"
+                        android:textColorHint="@color/colorSemiBlack"
+                        android:textColor="@color/colorBlue"
+                        android:textSize="10sp"
+                        android:autoLink="web"
+                        android:clickable="true"
+                        />
+
+                    <Button
+                        android:layout_marginTop="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_below="@id/findNameURL"
+                        android:layout_toRightOf="@id/findChordByNameURL"
+                        android:id="@+id/btnFindChordByNameURL"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:background="@drawable/ic_baseline_search_24"
+                        />
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:layout_below="@id/searchBoxURL"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+                    <TextView
+                        android:id="@+id/scrapedLyricURL"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your lyric will appear here"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorSemiWhite"
+                        android:padding="5dp"/>
+
+                </RelativeLayout>
+
+
+
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card5"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/card4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/colorGrey"
+            app:cardCornerRadius="20dp">
+
+            <TextView
+                android:id="@+id/textCard5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Replace "
+                android:textColor="@color/colorWhite"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDownCard5"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_arrow_drop_down_24"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/replaceText"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_compare_arrows_24"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/btnCopyCard5"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="right"
+                android:background="@drawable/ic_baseline_file_copy_24"
+                android:layout_marginRight="100dp"
+                android:layout_marginTop="12dp"/>
+
+            <RelativeLayout
+                android:layout_marginTop="50dp"
+                android:id="@+id/expandableCard5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+
+                <RelativeLayout
+                    android:id="@+id/replaceBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp">
+
+                    <EditText
+                        android:id="@+id/textBeforeReplace"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Paste here"
+                        android:textColorHint="@color/colorSemiBlack"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:layout_below="@id/textBeforeReplace"
+                        android:id="@+id/textReplaceTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30dp"
+                        android:fontFamily="@font/acme"
+                        android:text="Replaced"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="40sp" />
+
+                    <TextView
+                        android:layout_marginTop="40dp"
+                        android:layout_below="@id/textReplaceTitle"
+                        android:id="@+id/textAfterReplace"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Your text will appear here"
+                        android:textSize="15sp"
+                        android:textColor="@color/colorSemiWhite"
+                        android:padding="5dp"/>
+
+                    <Button
+                        android:layout_below="@id/textAfterReplace"
+                        android:id="@+id/btnTextReplaceDone"
+                        android:layout_width="100dp"
+                        android:layout_height="40dp"
+                        android:text="Done"
+                        android:textColor="@color/colorWhite"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="20dp"
+                        android:background="@drawable/rounded_stroke_bg"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:layout_below="@id/card5"
+            android:layout_centerHorizontal="true"
+            android:paddingTop="20dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:lottie_rawRes="@raw/equalizer"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+    </RelativeLayout>
+
+</ScrollView>

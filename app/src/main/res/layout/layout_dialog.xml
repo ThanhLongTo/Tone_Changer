@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dialogContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_dialog_bg"
+        android:layout_margin="10dp">
+
+        <ScrollView
+            android:id="@+id/dialogScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/chordReplaceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/chord_replace"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_centerHorizontal="true" />
+
+                <EditText
+                    android:layout_below="@id/chordReplaceTitle"
+                    android:id="@+id/chordBeforeReplace"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_chord_input_bg"
+                    android:hint="before"
+                    android:textColorHint="@color/colorSemiBlack"
+                    android:textColor="@color/colorWhite"
+                    android:padding="10dp"/>
+
+                <ImageView
+                    android:layout_below="@id/chordReplaceTitle"
+                    android:id="@+id/switchBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_arrow_forward_24"
+                    android:layout_marginTop="30dp"
+                    android:layout_centerHorizontal="true"/>
+
+                <EditText
+                    android:layout_below="@id/chordReplaceTitle"
+                    android:id="@+id/chordAfterReplace"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/round_chord_input_bg"
+                    android:hint="after"
+                    android:textColorHint="@color/colorSemiBlack"
+                    android:textColor="@color/colorWhite"
+                    android:padding="10dp"/>
+
+                <TextView
+                    android:id="@+id/chordNotFound"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/switchBtn"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:text=""
+                    android:textColor="@color/colorRed"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/submitChord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialogScrollView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="10dp"
+            android:text="Change"
+            android:textColor="@color/colorWhite"
+            android:background="@drawable/rounded_stroke_bg"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
