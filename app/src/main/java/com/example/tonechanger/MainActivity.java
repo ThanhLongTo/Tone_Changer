@@ -564,8 +564,10 @@ public class MainActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
+
     public static String toneChangerUp(String lyric) {
         String str = lyric;
+        Map<String, String> chordMap = new HashMap<>();
         Map<String, String> map = new HashMap<>();
         map.put("[C]","[C#]");
         map.put("[C#]","[D]");
@@ -593,13 +595,12 @@ public class MainActivity extends AppCompatActivity {
         map.put("[A#m]","[Bm]");
         map.put("[Bm]","[Cm]");
 
-
         map.put("[C7]","[C#7]");
         map.put("[C#7]","[D7]");
         map.put("[D7]","[D#7]");
         map.put("[D#7]","[E7]");
         map.put("[E7]","[F7]");
-        map.put("[F7","[F#7]");
+        map.put("[F7]","[F#7]");
         map.put("[F#7]","[G7]");
         map.put("[G7]","[G#7]");
         map.put("[G#7]","[A7]");
@@ -612,7 +613,7 @@ public class MainActivity extends AppCompatActivity {
         map.put("[Dm7]","[D#m7]");
         map.put("[D#m7]","[Em7]");
         map.put("[Em7]","[Fm7]");
-        map.put("[Fm7","[F#m7]");
+        map.put("[Fm7]","[F#m7]");
         map.put("[F#m7]","[Gm7]");
         map.put("[Gm7]","[G#m7]");
         map.put("[G#m7]","[Am7]");
@@ -633,19 +634,56 @@ public class MainActivity extends AppCompatActivity {
         map.put("[A#maj7]","[Bmaj7]");
         map.put("[Bmaj7]","[Cmaj7]");
 
+        map.put("[Cm7b5]","[C#m7b5]");
+        map.put("[C#m7b5]","[Dm7b5]");
+        map.put("[Dm7b5]","[D#m7b5]");
+        map.put("[D#m7b5]","[Em7b5]");
+        map.put("[Em7b5]","[Fm7b5]");
+        map.put("[Fm7b5]","[F#m7b5]");
+        map.put("[F#m7b5]","[Gm7b5]");
+        map.put("[Gm7b5]","[G#m7b5]");
+        map.put("[G#m7b5]","[Am7b5]");
+        map.put("[Am7b5]","[A#m7b5]");
+        map.put("[A#m7b5]","[Bm7b5]");
+        map.put("[Bm7b5]","[Cm7b5]");
+
+        map.put("[C7b5]","[C#7b5]");
+        map.put("[C#7b5]","[D7b5]");
+        map.put("[D7b5]","[D#7b5]");
+        map.put("[D#7b5]","[E7b5]");
+        map.put("[E7b5]","[F7b5]");
+        map.put("[F7b5]","[F#7b5]");
+        map.put("[F#7b5]","[G7b5]");
+        map.put("[G7b5]","[G#7b5]");
+        map.put("[G#7b5]","[A7b5]");
+        map.put("[A7b5]","[A#7b5]");
+        map.put("[A#7b5]","[B7b5]");
+        map.put("[B7b5]","[C7b5]");
+
 
         List<String> myCheckedList = new ArrayList<>();
 
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String originalKey = entry.getKey();
-            String originalValue = entry.getValue();
             if (lyric.contains(originalKey)) {
                 if (!myCheckedList.contains(originalKey)){
                     myCheckedList.add(originalKey);
-                    str = str.replace(originalKey , originalValue);
                 }
             }
         }
+
+        for (int i = 0; i < myCheckedList.size(); i++) {
+            str = str.replace(myCheckedList.get(i), String.format("[chord %s]", i));
+            chordMap.put(String.format("[chord %s]", i), myCheckedList.get(i));
+        }
+
+        for (Map.Entry<String, String> entry : chordMap.entrySet()) {
+            String originalKey = entry.getKey();
+            String originalValue = entry.getValue();
+            chordMap.put(originalKey, map.get(originalValue));
+            str = str.replace(originalKey, map.get(originalValue));
+        }
+
 
         return str;
     }
@@ -653,6 +691,7 @@ public class MainActivity extends AppCompatActivity {
     public static String toneChangerDown(String lyric) {
         String str = lyric;
         Map<String, String> map = new HashMap<>();
+        Map<String, String> chordMap = new HashMap<>();
 
         map.put("[C]", "[B]");
         map.put("[B]", "[A#]");
@@ -700,7 +739,7 @@ public class MainActivity extends AppCompatActivity {
         map.put("[G#m7]", "[Gm7]");
         map.put("[Gm7]", "[F#m7]");
         map.put("[F#m7]", "[Fm7]");
-        map.put("[F7m]", "[Em7]");
+        map.put("[Fm7]", "[Em7]");
         map.put("[Em7]", "[D#m7]");
         map.put("[D#m7]", "[Dm7]");
         map.put("[Dm7]", "[C#m7]");
@@ -719,18 +758,55 @@ public class MainActivity extends AppCompatActivity {
         map.put("[Dmaj7]", "[C#maj7]");
         map.put("[C#maj7]", "[Cmaj7]");
 
+        map.put("[Cm7b5]", "[Bm7b5]");
+        map.put("[Bm7b5]", "[A#m7b5]");
+        map.put("[A#m7b5]", "[Am7b5]");
+        map.put("[Am7b5]", "[G#m7b5]");
+        map.put("[G#m7b5]", "[Gm7b5]");
+        map.put("[Gm7b5]", "[F#m7b5]");
+        map.put("[F#m7b5]", "[Fm7b5]");
+        map.put("[Fm7b5]", "[Em7b5]");
+        map.put("[Em7b5]", "[D#m7b5]");
+        map.put("[D#m7b5]", "[Dm7b5]");
+        map.put("[Dm7b5]", "[C#m7b5]");
+        map.put("[C#m7b5]", "[Cm7b5]");
+
+        map.put("[C7b5]", "[B7b5]");
+        map.put("[B7b5]", "[A#7b5]");
+        map.put("[A#7b5]", "[A7b5]");
+        map.put("[A7b5]", "[G#7b5]");
+        map.put("[G#7b5]", "[G7b5]");
+        map.put("[G7b5]", "[F#7b5]");
+        map.put("[F#7b5]", "[F7b5]");
+        map.put("[F7b5]", "[E7b5]");
+        map.put("[E7b5]", "[D#7b5]");
+        map.put("[D#7b5]", "[D7b5]");
+        map.put("[D7b5]", "[C#7b5]");
+        map.put("[C#7b5]", "[C7b5]");
+
         List<String> myCheckedList = new ArrayList<>();
 
         for (Map.Entry<String, String> entry : map.entrySet()) {
             String originalKey = entry.getKey();
-            String originalValue = entry.getValue();
             if (lyric.contains(originalKey)) {
                 if (!myCheckedList.contains(originalKey)){
                     myCheckedList.add(originalKey);
-                    str = str.replace(originalKey , originalValue);
                 }
             }
         }
+
+        for (int i = 0; i < myCheckedList.size(); i++) {
+            str = str.replace(myCheckedList.get(i), String.format("[chord %s]", i));
+            chordMap.put(String.format("[chord %s]", i), myCheckedList.get(i));
+        }
+
+        for (Map.Entry<String, String> entry : chordMap.entrySet()) {
+            String originalKey = entry.getKey();
+            String originalValue = entry.getValue();
+            chordMap.put(originalKey, map.get(originalValue));
+            str = str.replace(originalKey, map.get(originalValue));
+        }
+
 
         return str;
     }
